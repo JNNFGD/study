@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+<style>
+    #root {
+        background-color: aqua;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <!-- konten -->
+    <div id="root">
+        <input type="text" placeholder="username" id="userinput" />
+        <input type="password" placeholder="password" id="passwordinput" />
+        <button onclick="onlogin()">LOGIN</button>
+    </div>
+
+    <script type="application/javascript">
+
+        let userinput = document.getElementById('userinput');
+        let passwordinput = document.getElementById('passwordinput');
+        function onlogin() {
+            console.log('tombol login sukses');
+            console.log(userinput.value);
+            console.log(passwordinput.value);
+
+            
+        if(userinput.value == "admin" && passwordinput.value == "admin123") {
+            alert('login berhasil');
+        }
+        else {
+            alert('login gagal');
+        }
+           
+           
+        }
+
+    </script>
+</body>
+
+</html>

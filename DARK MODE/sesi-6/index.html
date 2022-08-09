@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>JNN</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" id="HOME">HOME</a>
+            <a onclick="darkMode()" id="MODE">MODE</a>
+        </nav>
+        <h1>jnn study</h1>
+        <p class="info" id="info"></p>
+
+    </div>
+    <!-- initializing function script -->
+    <script>
+        let body = document.body;
+        let info = document.getElementById("info");
+        let MODE = document.getElementById("MODE");
+        let HOME = document.getElementById("HOME");
+
+        const darkLimit = 5;
+        let darkCounter = 0;
+        let darkRemainingLeft;
+
+        function darkMode() {
+            if (darkRemainingLeft == 0) {
+                info.textContent = "KESEMPATAN MENGGANTIMODE TELAH HABIS"
+                MODE.style.display = "none";
+                HOME.textContent = "RESTART";
+                return;
+            }
+
+            darkCounter += 1;
+            darkRemainingLeft = darkLimit - darkCounter;
+
+            //render ke info elemen
+
+            info.textContent = `Mengganti mode sebanyak ${darkCounter}x, tersisa ${darkRemainingLeft}`
+
+            console.log('mode di ganti sebanyak: ', darkCounter);
+            console.log('kesempatan anda: ', darkRemainingLeft);
+            body.classList.toggle("dark");
+        }
+    </script>
+</body>
+
+</html>
